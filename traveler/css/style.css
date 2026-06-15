@@ -495,3 +495,29 @@ textarea{
         font-size:3rem;
     }
 }
+.book-btn,
+.primary-btn,
+.submit-booking,
+.navigate-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+
+    background:rgba(255,255,255,.4);
+
+    animation:ripple-animation .6s linear;
+
+    pointer-events:none;
+}
+
+@keyframes ripple-animation{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
