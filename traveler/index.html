@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Banaras Buddy - Traveler</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<div class="background-blur"></div>
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="logo-badge">
+🧭 Banaras Buddy
+</div>
+
+<h1>
+Find Trusted Local Guides
+</h1>
+
+<p>
+Explore Banaras with verified local companions.
+</p>
+
+<button class="primary-btn" id="findGuideBtn">
+Find Guide
+</button>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="guide-section">
+
+<div class="section-title">
+Available Guides
+</div>
+
+<div class="guide-grid">
+
+<div class="guide-card">
+
+<div class="guide-top">
+
+<img
+src="https://i.pravatar.cc/150?img=11"
+alt="Guide"
+/>
+
+<div>
+
+<h3>Rajesh Kumar</h3>
+
+<span class="verified">
+✓ Verified Guide
+</span>
+
+</div>
+
+</div>
+
+<div class="guide-details">
+
+<p>Languages</p>
+<h4>English • Hindi</h4>
+
+<p>Price</p>
+<h4>₹500/hr</h4>
+
+<p>Rating</p>
+<h4>⭐ 4.9</h4>
+
+</div>
+
+<button
+class="book-btn"
+onclick="openBookingModal('Rajesh Kumar')">
+Book Now
+</button>
+
+</div>
+
+<div class="guide-card">
+
+<div class="guide-top">
+
+<img
+src="https://i.pravatar.cc/150?img=12"
+alt="Guide"
+/>
+
+<div>
+
+<h3>Amit Singh</h3>
+
+<span class="verified">
+✓ Verified Guide
+</span>
+
+</div>
+
+</div>
+
+<div class="guide-details">
+
+<p>Languages</p>
+<h4>English • Hindi • French</h4>
+
+<p>Price</p>
+<h4>₹700/hr</h4>
+
+<p>Rating</p>
+<h4>⭐ 4.8</h4>
+
+</div>
+
+<button
+class="book-btn"
+onclick="openBookingModal('Amit Singh')">
+Book Now
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="status-section">
+
+<div class="glass-card">
+
+<h2>Booking Status</h2>
+
+<div id="bookingStatus">
+
+<span class="pending">
+Pending
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="map-section">
+
+<div class="glass-card">
+
+<h2>Guide Navigation</h2>
+
+<div id="map"></div>
+
+<button class="navigate-btn">
+Open Navigation
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+<div class="modal" id="bookingModal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>Book Guide</h2>
+
+<button
+class="close-btn"
+onclick="closeBookingModal()">
+✕
+</button>
+
+</div>
+
+<form id="bookingForm">
+
+<input
+type="text"
+id="travelerName"
+placeholder="Your Name"
+required
+/>
+
+<select id="meetingPoint">
+
+<option>
+Assi Ghat
+</option>
+
+<option>
+Dashashwamedh Ghat
+</option>
+
+<option>
+Kashi Vishwanath Corridor
+</option>
+
+<option>
+Varanasi Junction
+</option>
+
+</select>
+
+<input
+type="date"
+id="bookingDate"
+required
+/>
+
+<input
+type="time"
+id="bookingTime"
+required
+/>
+
+<select id="duration">
+
+<option>
+1 Hour
+</option>
+
+<option>
+2 Hours
+</option>
+
+<option>
+4 Hours
+</option>
+
+<option>
+Full Day
+</option>
+
+</select>
+
+<textarea
+id="notes"
+placeholder="Special Notes">
+</textarea>
+
+<button
+type="submit"
+class="submit-booking">
+Submit Booking
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/map.js"></script>
+<script src="js/firebase.js"></script>
+
+</body>
+</html>
