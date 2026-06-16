@@ -203,3 +203,56 @@ window.addEventListener(
         listenForBookings();
     }
 );
+window.updateJourneyState =
+async function(status){
+
+    if(!currentDocId) return;
+
+    try{
+
+        await updateDoc(
+            doc(
+                db,
+                "bookings",
+                currentDocId
+            ),
+            {
+                journeyStatus:status
+            }
+        );
+
+        showToast(status);
+
+    }catch(error){
+
+        console.error(error);
+    }
+};
+
+window.updatePaymentState =
+async function(payment){
+
+    if(!currentDocId) return;
+
+    try{
+
+        await updateDoc(
+            doc(
+                db,
+                "bookings",
+                currentDocId
+            ),
+            {
+                payment:payment
+            }
+        );
+
+        showToast(
+            "Payment Confirmed"
+        );
+
+    }catch(error){
+
+        console.error(error);
+    }
+};
